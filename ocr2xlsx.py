@@ -79,7 +79,6 @@ class Sample:
         l2 = []
         for file in files:
             if file.is_file():
-                print(file.name)
                 kind = filetype.guess(file.name)
                 # if kind is not None and (kind.extension == 'jpg' or kind.extension == 'png'):
                 if kind is None:
@@ -87,6 +86,7 @@ class Sample:
                 if kind.extension != 'jpg' and kind.extension != 'png':
                     continue
 
+                print(file.name)
                 # print(file)
                 # print(kind)
                 # continue
