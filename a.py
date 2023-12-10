@@ -111,33 +111,43 @@ class Sample:
                     # print(indexStart)
                     # print(indexEnd)
                     l1 = l[indexStart:indexEnd]
-                    # print(l1)
                     l2 = l2 + fixlist(l1)
+                    print(l2)
 
-                    for i in l2:
-                        index = l2.index(i)
-                        row = 0
-                        col = 0
-                        if i == '样本号':
-                            row += 1
-                            worksheet.write(row, 0, l2[index + 1])
-                            worksheet.write(row, 2, l2[index + 4])
-                        if not isnumber(i) and l2[index - 1] != '样本号':
-                            header.append(i)
-                            # print(i)
                 except Exception as error:
                     print(error.message)
                     print(error.data.get("Recommend"))
                     UtilClient.assert_as_string(error.message)
 
 
-        print(l2)
+        # print(l2)
+        for i in l2:
+            index = l2.index(i)
+            if not isnumber(i) and l2[index - 1] != '样本号':
+                header.append(i)
+                # print(i)
         header1 = list(dict.fromkeys(header))
         for i in header1:
             worksheet.write(0, header1.index(i), i)
-        # print(header)
+        print(header)
         print('header is:')
         print(header1)
+
+        row = 0
+        for index in range(len(l2)):
+            i = l2[index]
+            if i == '样本号':
+                indexOfNew = index
+                row += 1
+                worksheet.write(row, 0, l2[index + 1])
+                worksheet.write(row, 2, l2[index + 4])
+            if (index - indexOfNew) >= 5:
+                # print(index)
+                # print(indexOfNew)
+                # print(i)
+                if not isnumber(i):
+                    col = header1.index(i)
+                    worksheet.write(row, col, l2[index + 1])
         workbook.close()
 
 if __name__ == '__main__':
