@@ -87,7 +87,7 @@ class Sample:
                     continue
 
                 # print(file)
-                # print(file.name)
+                print(file.name)
                 # print(kind)
                 # continue
 
