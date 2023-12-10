@@ -45,7 +45,7 @@ def fixlist(list):
             # print(list[index])
             # print(i, next)
             list.remove(next)
-    # print(list)
+    print(list)
     return list
 
 class Sample:
@@ -122,7 +122,9 @@ class Sample:
                     UtilClient.assert_as_string(error.message)
 
 
-        # print(l2)
+        print('Final data:')
+        print(l2)
+
         for i in l2:
             index = l2.index(i)
             if not isnumber(i) and l2[index - 1] != '样本号':
@@ -131,7 +133,7 @@ class Sample:
         header1 = list(dict.fromkeys(header))
         for i in header1:
             worksheet.write(0, header1.index(i), i)
-        print('header is:')
+        print('Header is:')
         print(header1)
 
         row = 0
