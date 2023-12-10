@@ -43,13 +43,12 @@ def fixlist(list):
         if not isnumber(i) and not isnumber(next) and not i in header and not next in header:
             list[index] = i + next
             list.remove(next)
-    print(list)
+    # print(list)
     return list
 
 class Sample:
     def __init__(self):
         pass
-
 
     @staticmethod
     def create_client(
@@ -75,6 +74,7 @@ class Sample:
     ) -> None:
         # files = os.listdir()
         files = os.scandir()
+        l2 = []
         for file in files:
             if file.is_file():
                 kind = filetype.guess(file.name)
@@ -112,10 +112,16 @@ class Sample:
                     # print(indexEnd)
                     l1 = l[indexStart:indexEnd]
                     # print(l1)
-                    l2 = fixlist(l1)
+                    l2 = l2 + fixlist(l1)
 
                     for i in l2:
                         index = l2.index(i)
+                        row = 0
+                        col = 0
+                        if i == '样本号':
+                            row += 1
+                            worksheet.write(row, 0, l2[index + 1])
+                            worksheet.write(row, 2, l2[index + 4])
                         if not isnumber(i) and l2[index - 1] != '样本号':
                             header.append(i)
                             # print(i)
@@ -125,6 +131,7 @@ class Sample:
                     UtilClient.assert_as_string(error.message)
 
 
+        print(l2)
         header1 = list(dict.fromkeys(header))
         for i in header1:
             worksheet.write(0, header1.index(i), i)
