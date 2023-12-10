@@ -15,7 +15,7 @@ from alibabacloud_ocr_api20210707 import models as ocr_api_20210707_models
 from alibabacloud_tea_util import models as util_models
 from alibabacloud_tea_util.client import Client as UtilClient
 
-header = ['样本号', '血清', '样本ID']
+header = ['样本号', '血清', '样品ID']
 
 def isnumber(string):
     try:
@@ -25,7 +25,7 @@ def isnumber(string):
         return False
 
 def fixlist(list):
-    print(list)
+    # print(list)
     trashChars = ['@', '二', '工']
     for i in trashChars:
         try:
@@ -115,7 +115,8 @@ class Sample:
                     l2 = fixlist(l1)
 
                     for i in l2:
-                        if not isnumber(i):
+                        index = l2.index(i)
+                        if not isnumber(i) and l2[index - 1] != '样本号':
                             header.append(i)
                             # print(i)
                 except Exception as error:
@@ -128,6 +129,7 @@ class Sample:
         for i in header1:
             worksheet.write(0, header1.index(i), i)
         # print(header)
+        print('header is:')
         print(header1)
         workbook.close()
 
