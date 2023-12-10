@@ -1,3 +1,4 @@
+pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 pip install filetype
 pip install XlsxWriter
 pip install alibabacloud_darabonba_stream

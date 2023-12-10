@@ -1,6 +1,7 @@
 通过阿里云`OCR`接口获取图片数据。请确保网络畅通。
 
-安装`python`。
+安装`python 3.11`。**请勿使用python 3.12，`aiohttp`暂不支持python 3.12**。  
+[python 3.11.7 64-bit](https://www.python.org/ftp/python/3.11.7/python-3.11.7-amd64.exe), [python 3.11.7 32-bit](https://www.python.org/ftp/python/3.11.7/python-3.11.7.exe)。
 
 安装依赖：
 ```
