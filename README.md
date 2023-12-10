@@ -7,7 +7,7 @@
 运行`pip_install.cmd`安装依赖。
 
 ### 使用
-复制`ocr2xlsx.py`和`main.cmd`至图片文件夹，运行`main.cmd`。脚本将读取文件夹中所有图片信息，并将数据导出为文件夹下的`output.xlsx`，表格式参看本文件夹下`output.xlsx`。
+复制`ocr2xlsx.py`和`main.cmd`至图片目录，运行`main.cmd`。脚本将识别目录中所有图片，并将数据导出为目录下的`output.xlsx`。表格式参看本目录下`output.xlsx`。
 
 ### Note
 * 目前仅支持`jpg`和`png`格式的图片。
