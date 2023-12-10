@@ -7,6 +7,7 @@ import filetype
 import xlsxwriter
 
 from typing import List
+from dotenv import load_dotenv
 
 from alibabacloud_ocr_api20210707.client import Client as ocr_api20210707Client
 from alibabacloud_tea_openapi import models as open_api_models
@@ -16,6 +17,8 @@ from alibabacloud_tea_util import models as util_models
 from alibabacloud_tea_util.client import Client as UtilClient
 
 header = ['样本号', '血清', '样品ID']
+
+load_dotenv()
 
 def isnumber(string):
     try:
@@ -91,7 +94,7 @@ class Sample:
                 # print(kind)
                 # continue
 
-                client = Sample.create_client('LTAI5tBmKAjcNE7mpFiSW7n4', 'qOp2XtV5PQZjPh5O28YctTRb0x8B0n')
+                client = Sample.create_client(os.getenv('KEYID'), os.getenv('KEYSECRET'))
                 body_stream = StreamClient.read_from_file_path(file)
                 recognize_general_request = ocr_api_20210707_models.RecognizeGeneralRequest(
                     body=body_stream
