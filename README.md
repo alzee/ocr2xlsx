@@ -1,4 +1,4 @@
-### 下载 ocr2xlsx.py
+### 下载 ocr2xlsx
 [zip](https://github.com/alzee/ocr2xlsx/archive/refs/heads/main.zip), [tar.gz](https://github.com/alzee/ocr2xlsx/archive/main.tar.gz)
 
 ### 安装`python 3.11`
