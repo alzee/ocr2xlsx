@@ -25,7 +25,7 @@ def isnumber(string):
         return False
 
 def fixlist(list):
-    # print(list)
+    print(list)
     trashChars = ['@', '二', '工']
     for i in trashChars:
         try:
@@ -123,11 +123,13 @@ class Sample:
                     print(error.data.get("Recommend"))
                     UtilClient.assert_as_string(error.message)
 
-        worksheet.write(1, 1, 123.12)
-        workbook.close()
+
         header1 = list(dict.fromkeys(header))
+        for i in header1:
+            worksheet.write(0, header1.index(i), i)
         # print(header)
-        # print(header1)
+        print(header1)
+        workbook.close()
 
 if __name__ == '__main__':
     Sample.main(sys.argv[1:])
