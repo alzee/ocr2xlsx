@@ -96,7 +96,7 @@ class Sample:
                 )
                 runtime = util_models.RuntimeOptions()
 
-                workbook = xlsxwriter.Workbook('demo.xlsx')
+                workbook = xlsxwriter.Workbook('output.xlsx')
                 worksheet = workbook.add_worksheet()
 
                 try:
