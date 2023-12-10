@@ -6,7 +6,7 @@ pip install XlsxWriter
 pip install alibabacloud_darabonba_stream
 pip install alibabacloud_ocr_api20210707==2.0.1
 
-python main.py
+python ocr2xlsx.py
 
 echo Press any key to exit...
 pause > nul
