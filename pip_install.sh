@@ -8,6 +8,7 @@
 
 ############### Main Part ###############
 
+pip install python-dotenv
 pip install filetype
 pip install XlsxWriter
 pip install alibabacloud_darabonba_stream
