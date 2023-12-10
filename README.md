@@ -10,4 +10,4 @@ pip install alibabacloud_darabonba_stream
 pip install alibabacloud_ocr_api20210707==2.0.1
 ```
 
-复制`main.py`至图片文件夹并运行。脚本将读取文件夹中所有文件信息，并将数据导出为文件夹下的`output.xlsx`，表格式参看本文件夹下`output.xlsx`。
+复制`main.py`和`main.cmd`至图片文件夹，运行`main.cmd`。脚本将读取文件夹中所有文件信息，并将数据导出为文件夹下的`output.xlsx`，表格式参看本文件夹下`output.xlsx`。
