@@ -1,5 +1,5 @@
 ### 下载 ocr2xlsx
-[zip](https://github.com/alzee/ocr2xlsx/archive/refs/heads/main.zip), [tar.gz](https://github.com/alzee/ocr2xlsx/archive/main.tar.gz)
+[zip](https://github.com/alzee/ocr2xlsx/archive/refs/heads/main.zip), [tar.gz](https://github.com/alzee/ocr2xlsx/archive/main.tar.gz), [仓库地址](https://github.com/alzee/ocr2xlsx)
 
 ### 安装`python 3.11`
 * **请勿使用`python 3.12`**，依赖库[`aiohttp`暂不支持`python 3.12`](https://github.com/aio-libs/aiohttp/issues/7739) 
