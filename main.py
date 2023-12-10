@@ -25,7 +25,7 @@ def isnumber(string):
         return False
 
 def fixlist(list):
-    print(list)
+    # print(list)
     trashChars = ['@', '二', '工']
     for i in trashChars:
         try:
@@ -33,8 +33,8 @@ def fixlist(list):
         except:
             True
 
-    for i in list:
-        index = list.index(i)
+    for index in range(len(list)):
+        i = list[index]
         if index == len(list) - 1:
             break
         next = list[index + 1]
@@ -42,8 +42,10 @@ def fixlist(list):
         # print(i)
         if not isnumber(i) and not isnumber(next) and not i in header and not next in header:
             list[index] = i + next
+            # print(list[index])
+            # print(i, next)
             list.remove(next)
-    print(list)
+    # print(list)
     return list
 
 class Sample:
