@@ -1,1 +1,4 @@
 *.jpg
+*.xlsx
+.~lock*
+res
